@@ -1,0 +1,91 @@
+.phone {
+  display: grid;
+  height: 90%;
+  width: 75%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 1fr 1fr;
+  align-items: center;
+}
+.phone strong {
+  height: 50%;
+  color: white;
+  box-shadow: -1px 0px 5px #eee;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phone div.header span {
+  font-style: italic;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+.phone .imgSlider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid black;
+  padding: 2px;
+}
+.phone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s linear ;
+  -webkit-transition: transform 0.5s linear ;
+  -moz-transition: transform 0.5s linear ;
+  -ms-transition: transform 0.5s linear ;
+  -o-transition: transform 0.5s linear ;
+}
+.phone img:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper {
+  align-items: center;
+}
+.phone .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+.phone .swiper-pagination-bullet {
+  width: 4px;
+  height: 4px;
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
+}
+.phone .price {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+.phone .price p:nth-child(1) {
+  color: #85bb65;
+}
+.phone .price p:nth-child(2) {
+  color: red;
+}
+.phone .price p:nth-child(3) {
+  color: yellow;
+}
