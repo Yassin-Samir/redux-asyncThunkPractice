@@ -1,6 +1,12 @@
-.app {
-  height: 90vh;
-  width: 95%;
+header {
+  grid-area: nav;
+}
+main {
+  justify-self: center;
+  align-self: center;
+  grid-area: main;
+  max-width: 90vw;
+  height: 50vh;
 }
 .spinner {
   width: 100px;
@@ -14,6 +20,10 @@
   -o-border-radius: 50%;
   animation: spin 1s 0s linear infinite;
   -webkit-animation: spin 1s 0s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
 }
 
 .swiper-slide {

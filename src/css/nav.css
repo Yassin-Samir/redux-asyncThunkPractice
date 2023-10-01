@@ -1,0 +1,11 @@
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+nav ul a.active {
+  color: red;
+}
+nav ul a {
+  color: #eee;
+  font-size: 1.8rem;
+}

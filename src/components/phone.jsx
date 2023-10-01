@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-import { pagination } from "../swiper";
+import { paginationConfig } from "../swiper";
 function Phone({ category, images, price, rating, stock, title, thumbnail }) {
   return (
     <div className="phone">
@@ -10,7 +10,7 @@ function Phone({ category, images, price, rating, stock, title, thumbnail }) {
       </div>
       <div className="imgSlider">
         <Swiper
-          pagination={pagination}
+          pagination={paginationConfig}
           modules={[Pagination]}
           className="phoneSwiper"
         >

@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-const fetchPhones = createAsyncThunk("shop/fetchPhones", async () => {
+const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
   try {
     console.log("ran");
-    const phonesPromise = fetch("https://dummyjson.com/products");
+    const phonesPromise = fetch("https://jsonplaceholder.typicode.com/todos");
     return await (await phonesPromise).json();
   } catch (error) {
     throw error.message;
@@ -11,30 +11,30 @@ const fetchPhones = createAsyncThunk("shop/fetchPhones", async () => {
 });
 const initialState = {
   Loading: false,
-  phones: [],
+  Todos: null,
   error: null,
 };
-const shopReducer = createSlice({
-  name: "shop",
+const todoSlice = createSlice({
+  name: "todos",
   initialState,
   reducers: {
     clearphones: (state) => {
-      state.phones = [];
+      state.Todos = null;
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchPhones.pending, (state, action) => {
+    builder.addCase(fetchTodos.pending, (state, action) => {
       state.Loading = true;
     });
-    builder.addCase(fetchPhones.fulfilled, (state, action) => {
+    builder.addCase(fetchTodos.fulfilled, (state, action) => {
       state.Loading = false;
-      state.phones = action.payload;
+      state.Todos = action.payload;
     });
-    builder.addCase(fetchPhones.rejected, (state, action) => {
+    builder.addCase(fetchTodos.rejected, (state, action) => {
       state.Loading = false;
       state.error = action.error.message;
     });
   },
 });
-export default shopReducer.reducer;
-export { fetchPhones };
+export default todoSlice.reducer;
+export { fetchTodos };
