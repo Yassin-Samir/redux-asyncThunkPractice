@@ -1,7 +1,9 @@
-import { lazy } from "react";
+import { Suspense, lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./components/Layout";
 import Error from "./components/error";
+import Loading from "./components/Loading";
+import NotFound from "./Pages/NotFound";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./css/app.css";
@@ -18,14 +20,23 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/phones",
-        element: <Phones />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Phones />
+          </Suspense>
+        ),
         errorElement: <Error />,
       },
       {
         path: "/todos",
-        element: <Todos />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Todos />
+          </Suspense>
+        ),
         errorElement: <Error />,
       },
+      { path: "/*", element: <NotFound /> },
     ],
   },
 ]);

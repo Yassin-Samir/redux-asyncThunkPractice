@@ -9,10 +9,10 @@ main {
   height: 50vh;
 }
 .spinner {
-  width: 100px;
-  height: 100px;
-  border: 2px solid blue;
-  border-right-color: transparent;
+  width: 150px;
+  height: 150px;
+  border: 7px solid ghostwhite;
+  border-right-color: #039677;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
