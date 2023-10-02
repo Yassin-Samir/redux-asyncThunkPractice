@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import { paginationConfig } from "../swiper";
 import { fetchPhones } from "../redux/slices/phones";
 import { phoneSelector } from "../redux/selectors/";
@@ -19,8 +19,10 @@ function Phones() {
         <LoadingComponent />
       ) : (
         <Swiper
+          loop={true}
+          navigation={true}
           pagination={paginationConfig}
-          modules={[Pagination]}
+          modules={[Pagination, Navigation]}
           className="mainPhoneSwiper"
         >
           {phones &&
