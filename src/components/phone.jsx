@@ -24,6 +24,8 @@ function Phone({
           pagination={paginationConfig}
           modules={[Pagination, Navigation]}
           className="phoneSwiper"
+          observeParents={true}
+          observer={true}
         >
           <SwiperSlide>
             <img src={thumbnail} loading="lazy" />

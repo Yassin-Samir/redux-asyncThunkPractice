@@ -19,6 +19,8 @@ function Phones() {
       navigation={true}
       pagination={paginationConfig}
       modules={[Pagination, Navigation]}
+      observer={true}
+      observeParents={true}
       className={`mainPhoneSwiper ${Loading ? "skeleton" : ""}`}
     >
       {Loading ? (
