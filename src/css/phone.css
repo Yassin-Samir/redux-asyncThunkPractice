@@ -7,7 +7,7 @@
   align-items: center;
 }
 .phone strong {
-  height: 50%;
+  height: 2vh;
   color: white;
   box-shadow: -1px 0px 5px #eee;
   text-transform: capitalize;
@@ -19,6 +19,7 @@
   font-style: italic;
   letter-spacing: 1px;
   font-size: 0.8rem;
+  height: 15px;
 }
 .phone .imgSlider {
   width: 100%;

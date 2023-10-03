@@ -14,26 +14,26 @@ function Phones() {
     !phones ? dispatch(fetchPhones()) : null;
   }, []);
   return (
-    <>
+    <Swiper
+      loop={true}
+      navigation={true}
+      pagination={paginationConfig}
+      modules={[Pagination, Navigation]}
+      className={`mainPhoneSwiper ${Loading ? "skeleton" : ""}`}
+    >
       {Loading ? (
-        <LoadingComponent />
+        <SwiperSlide>
+          <Phone skeleton={true} />
+        </SwiperSlide>
       ) : (
-        <Swiper
-          loop={true}
-          navigation={true}
-          pagination={paginationConfig}
-          modules={[Pagination, Navigation]}
-          className="mainPhoneSwiper"
-        >
-          {phones &&
-            phones?.products?.map((phoneObj) => (
-              <SwiperSlide key={phoneObj.id}>
-                <Phone {...phoneObj} />
-              </SwiperSlide>
-            ))}
-        </Swiper>
+        phones &&
+        phones?.products?.map((phoneObj) => (
+          <SwiperSlide key={phoneObj.id}>
+            <Phone {...phoneObj} />
+          </SwiperSlide>
+        ))
       )}
-    </>
+    </Swiper>
   );
 }
 
