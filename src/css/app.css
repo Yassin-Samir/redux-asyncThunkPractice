@@ -92,7 +92,13 @@ footer a {
 }
 .skeleton {
   opacity: 0.7;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
   animation: skeleton-loading 1s linear infinite alternate;
+  -webkit-animation: skeleton-loading 1s linear infinite alternate;
 }
 .skeleton-text {
   width: 100%;
