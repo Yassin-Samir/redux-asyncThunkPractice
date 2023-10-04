@@ -6,8 +6,11 @@
   grid-template-rows: 1fr 2fr 1fr 1fr;
   align-items: center;
 }
+.phone > * {
+  user-select: none;
+}
 .phone strong {
-  height: 50%;
+  height: 2vh;
   color: white;
   box-shadow: -1px 0px 5px #eee;
   text-transform: capitalize;
@@ -15,10 +18,11 @@
   align-items: center;
   justify-content: center;
 }
-.phone div.header span {
+.phone div.header p {
   font-style: italic;
   letter-spacing: 1px;
   font-size: 0.8rem;
+  height: 15px;
 }
 .phone .imgSlider {
   width: 100%;
@@ -46,7 +50,6 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  user-select: none;
   transition: transform 0.5s linear;
   -webkit-transition: transform 0.5s linear;
   -moz-transition: transform 0.5s linear;
@@ -73,6 +76,7 @@
   display: flex;
   justify-content: space-between;
   align-content: space-between;
+  height: 2vh;
   flex-wrap: wrap;
 }
 .phone .price p:nth-child(1) {

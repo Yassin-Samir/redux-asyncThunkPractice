@@ -6,34 +6,33 @@ import { paginationConfig } from "../swiper";
 import { fetchPhones } from "../redux/slices/phones";
 import { phoneSelector } from "../redux/selectors/";
 import Phone from "../components/phone";
-import LoadingComponent from "../components/Loading";
 function Phones() {
   const dispatch = useDispatch();
   const { Loading, phones } = useSelector(phoneSelector);
   useEffect(() => {
     !phones ? dispatch(fetchPhones()) : null;
   }, []);
-  return (
-    <>
-      {Loading ? (
-        <LoadingComponent />
-      ) : (
-        <Swiper
-          loop={true}
-          navigation={true}
-          pagination={paginationConfig}
-          modules={[Pagination, Navigation]}
-          className="mainPhoneSwiper"
-        >
-          {phones &&
-            phones?.products?.map((phoneObj) => (
-              <SwiperSlide key={phoneObj.id}>
-                <Phone {...phoneObj} />
-              </SwiperSlide>
-            ))}
-        </Swiper>
-      )}
-    </>
+  return Loading ? (
+    <div className={`mainPhoneSwiper swiper`}>
+      <div className="swiper-slide">
+        <Phone skeleton={true} />
+      </div>
+    </div>
+  ) : (
+    <Swiper
+      loop={true}
+      navigation={true}
+      pagination={paginationConfig}
+      modules={[Pagination, Navigation]}
+      className={"mainPhoneSwiper"}
+    >
+      {phones &&
+        phones?.products?.map((phoneObj) => (
+          <SwiperSlide key={phoneObj.id}>
+            <Phone {...phoneObj} />
+          </SwiperSlide>
+        ))}
+    </Swiper>
   );
 }
 
