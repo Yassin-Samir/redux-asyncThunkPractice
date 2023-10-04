@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
             <Phones />
           </Suspense>
         ),
-        errorElement: <Error />,
+        errorElement: <Error message={"Something Wrong has happened"} />,
       },
       {
         path: "/todos",
@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
             <Todos />
           </Suspense>
         ),
-        errorElement: <Error />,
+        errorElement: <Error message={"Something Wrong has happened"} />,
       },
       { path: "/*", element: <NotFound /> },
     ],

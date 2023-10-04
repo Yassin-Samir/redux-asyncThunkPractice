@@ -116,3 +116,9 @@ footer a {
     background-color: hsl(200, 20%, 95%);
   }
 }
+.error {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: capitalize;
+  margin-top: 35vh;
+}
