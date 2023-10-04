@@ -1,0 +1,26 @@
+.todo {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  padding: 16px;
+  margin: 10px 0;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.todo .header {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.todo .title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+  word-wrap: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex-grow: 1;
+}

@@ -1,5 +1,6 @@
 header {
   grid-area: nav;
+  margin-top: 10px;
 }
 main {
   justify-self: center;
@@ -7,6 +8,19 @@ main {
   grid-area: main;
   width: 80vw;
   height: 80vh;
+}
+main:has(.todo) {
+  overflow-y: scroll;
+}
+main::-webkit-scrollbar {
+  width: 1vw;
+}
+main::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+main::-webkit-scrollbar-thumb {
+  background: #6649b8;
 }
 footer {
   display: flex;
@@ -92,11 +106,6 @@ footer a {
 }
 .skeleton {
   opacity: 0.7;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
   animation: skeleton-loading 1s linear infinite alternate;
   -webkit-animation: skeleton-loading 1s linear infinite alternate;
 }

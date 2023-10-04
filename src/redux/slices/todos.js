@@ -18,7 +18,7 @@ const todoSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    clearphones: (state) => {
+    cleartodos: (state) => {
       state.Todos = null;
     },
   },

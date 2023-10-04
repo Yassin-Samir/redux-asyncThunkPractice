@@ -9,8 +9,8 @@ import "swiper/css/pagination";
 import "./css/app.css";
 import "./css/nav.css";
 import "./css/phone.css";
+import "./css/todo.css";
 import "./css/index.css";
-
 const Todos = lazy(() => import("./Pages/Todos"));
 const Phones = lazy(() => import("./Pages/Phones"));
 export const router = createBrowserRouter([
